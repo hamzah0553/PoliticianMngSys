@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <Pane prefHeight="62.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="94.0" layoutY="16.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="109.0" text="Udvalg" />
+            <Button layoutX="237.0" layoutY="16.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="tilføj politker" />
+            <Button layoutX="392.0" layoutY="16.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="84.0" text="Edit" />
+         </children>
+      </Pane>
+   </bottom>
+   <top>
+      <Pane prefHeight="65.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField layoutX="14.0" layoutY="17.0" prefHeight="31.0" prefWidth="355.0" promptText="Søg efter politiker" />
+            <Button layoutX="369.0" layoutY="17.0" mnemonicParsing="false" text="Søg" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <TableView prefHeight="311.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

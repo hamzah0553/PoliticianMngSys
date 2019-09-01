@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <GridPane alignment="CENTER">
+         <Button GridPane.columnIndex="0" GridPane.rowIndex="0" prefHeight="100" prefWidth="100" fx:id="parliamentBtn">Folketinget</Button>
+         <Button GridPane.columnIndex="1" GridPane.rowIndex="0" prefHeight="100" prefWidth="100" fx:id="selectionBtn">Udvalg</Button>
+         <Button GridPane.columnIndex="0" GridPane.rowIndex="1" prefHeight="100" prefWidth="100" fx:id="ministerBtn">Ministre</Button>
+         <Button GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="100" prefWidth="100" fx:id="spokesmanBtn">Ordfører</Button>
+         <Button GridPane.columnIndex="0" GridPane.rowIndex="2" prefHeight="100" prefWidth="100" fx:id="mayorBtn">Borgmestre lokalt</Button>
+         <Button GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="100" prefWidth="100">Test</Button>
+
+      </GridPane>
+   </center>
+</BorderPane>
