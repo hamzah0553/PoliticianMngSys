@@ -43,12 +43,12 @@
         </TableView>
     </center>
     <left>
-        <VBox prefWidth="200" alignment="TOP_CENTER" style="-fx-background-color: #3D3D3D">
+        <VBox prefWidth="150" alignment="TOP_CENTER" style="-fx-background-color: #3D3D3D">
             <children>
-                <Label styleClass="navigationLabel">Parliament</Label>
-                <Label styleClass="navigationLabel">Selection</Label>
-                <Label styleClass="navigationLabel">Ministers</Label>
-                <Label styleClass="navigationLabel"></Label>
+                <Label styleClass="navigationBtn">Parliament</Label>
+                <Label styleClass="navigationBtn">Selection</Label>
+                <Label styleClass="navigationBtn">Ministers</Label>
+                <Label styleClass="navigationBtn"></Label>
             </children>
         </VBox>
     </left>

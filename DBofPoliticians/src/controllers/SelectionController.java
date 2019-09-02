@@ -3,7 +3,10 @@ package controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -23,7 +26,10 @@ import java.util.ResourceBundle;
 public class SelectionController implements Initializable {
 
     //Variables
-    public ArrayList<Selection> selections = new ArrayList<>();
+    private ArrayList<Selection> selections = new ArrayList<>();
+    private Stage primaryStage;
+    private Dimension screenSize;
+
     File selectedFile;
     String url;
 
@@ -46,9 +52,12 @@ public class SelectionController implements Initializable {
 
     @FXML
     private Button excelReaderBtn;
+    @FXML
+    private Button parliamentNav;
 
     public SelectionController(Stage primaryStage, Dimension screenSize){
-
+        this.primaryStage = primaryStage;
+        this.screenSize = screenSize;
     }
 
     //Run on initializing the dashboard
@@ -64,6 +73,19 @@ public class SelectionController implements Initializable {
             }
             showMembers();
         });
+
+        parliamentNav.setOnAction(event -> {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/parliament.fxml"));
+            loader.setController(new ParliamentController(primaryStage, screenSize));
+            try {
+                Parent root = loader.load();
+                primaryStage.setScene(new Scene(root, screenSize.width, screenSize.height));
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+        });
+
         selections = new SelectionFetcher().getSelectionsFromDb();
         showMembers();
 

@@ -63,7 +63,7 @@ public class ParliamentController implements Initializable {
     @FXML
     private Button excelReaderBtn;
     @FXML
-    private Label selectionNav;
+    private Button selectionNav;
 
 
     public ParliamentController(Stage primaryStage, Dimension screenSize){
@@ -84,6 +84,17 @@ public class ParliamentController implements Initializable {
                 members = new ParliamentFetcher().getParliamentFromDB();
             }
             showMembers();
+        });
+        selectionNav.setOnAction(event -> {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/selection.fxml"));
+            loader.setController(new SelectionController(primaryStage, screenSize));
+            try {
+                Parent root = loader.load();
+                primaryStage.setScene(new Scene(root, screenSize.width, screenSize.height));
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
         });
         members = new ParliamentFetcher().getParliamentFromDB();
         showMembers();

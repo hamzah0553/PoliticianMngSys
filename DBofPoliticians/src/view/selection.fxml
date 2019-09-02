@@ -10,29 +10,15 @@
 
 <?import java.net.URL?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-    <bottom>
-        <HBox prefHeight="63.0" prefWidth="702.0" BorderPane.alignment="CENTER">
-            <children>
-                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Læs Excel fil" fx:id="excelReaderBtn">
-                    <HBox.margin>
-                        <Insets left="20.0" />
-                    </HBox.margin>
-                </Button>
-                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Udvalg">
-                    <HBox.margin>
-                        <Insets left="20.0" />
-                    </HBox.margin>
-                </Button>
-                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="150.0" text="Tilføj politiker" />
-            </children>
-        </HBox>
-    </bottom>
     <top>
-        <Pane prefHeight="78.0" prefWidth="702.0" BorderPane.alignment="CENTER">
-            <children>
-                <TextField alignment="CENTER" layoutX="49.0" layoutY="24.0" prefHeight="31.0" prefWidth="206.0" promptText="Søg efter politiker" />
-            </children>
-        </Pane>
+        <AnchorPane prefHeight="78.0" prefWidth="702.0" >
+            <TextField prefHeight="31.0" prefWidth="206.0" promptText="Søg efter politiker"
+                       AnchorPane.leftAnchor="150" AnchorPane.topAnchor="20"/>
+            <Button AnchorPane.topAnchor="20" AnchorPane.rightAnchor="50" styleClass="excelReaderBtn"
+                    prefHeight="31.0" prefWidth="151.0" text="Læs Excel fil" fx:id="excelReaderBtn">
+
+            </Button>
+        </AnchorPane>
     </top>
     <center>
         <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="table">
@@ -47,12 +33,12 @@
         </TableView>
     </center>
     <left>
-        <VBox prefWidth="200" alignment="TOP_CENTER" style="-fx-background-color: #3D3D3D">
+        <VBox prefWidth="150" alignment="TOP_CENTER" style="-fx-background-color: #3D3D3D">
             <children>
-                <Label styleClass="navigationLabel">Parliament</Label>
-                <Label styleClass="navigationLabel">Selection</Label>
-                <Label styleClass="navigationLabel">Ministers</Label>
-                <Label styleClass="navigationLabel"></Label>
+                <Button styleClass="navigationBtn" fx:id="parliamentNav">Parliament</Button>
+                <Button styleClass="navigationBtn" fx:id="selectionNav">Selection</Button>
+                <Button styleClass="navigationBtn">Ministers</Button>
+                <Button styleClass="navigationBtn"></Button>
             </children>
         </VBox>
     </left>

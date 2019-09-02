@@ -100,7 +100,6 @@ public class SheetSaverToDB {
     private int getConstituencyId(String constituencyName){
         int constituencyId = 0;
         boolean constituencyExist;
-        constituencyName = constituencyName.replaceAll("\\s+", "");
 
         try {
             Connection conn = DB.getDB().getConnection();
@@ -113,6 +112,9 @@ public class SheetSaverToDB {
                 constituencyId = rs.getInt(1);
                 constituencyExist = rs.getString(2).equals(constituencyName);
             }
+            statement.close();
+            conn.close();
+            System.out.println("Storkreds " + constituencyName + " " + constituencyId);
             return constituencyId;
         }
         catch (SQLException e){

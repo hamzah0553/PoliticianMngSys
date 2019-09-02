@@ -2,6 +2,7 @@ package system;
 
 import controllers.DKController;
 import controllers.EUController;
+import controllers.ParliamentController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -46,8 +47,8 @@ public class Controller implements Initializable{
     public void changeSceneToDk(){
         try {
             System.out.println("running?");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/dkDashboard.fxml"));
-            loader.setController(new DKController(primaryStage, screenSize));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/parliament.fxml"));
+            loader.setController(new ParliamentController(primaryStage, screenSize));
             Parent root = loader.load();
             primaryStage.setScene(new Scene(root, screenSize.getWidth(), screenSize.getHeight()));
             System.out.println("scene changed to dk");
